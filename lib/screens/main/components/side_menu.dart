@@ -17,7 +17,7 @@ class SideMenu extends StatelessWidget {
               child: Image.asset("assets/images/logo.png"),
             ),
             DrawerListTile(
-              title: "Dashbord",
+              title: "Tableau de bord",
               svgSrc: "assets/icons/menu_dashbord.svg",
               press: () {},
             ),
@@ -26,7 +26,7 @@ class SideMenu extends StatelessWidget {
               svgSrc: "assets/icons/menu_tran.svg",
               press: () {},
             ),
-            DrawerListTile(
+           /* DrawerListTile(
               title: "Task",
               svgSrc: "assets/icons/menu_task.svg",
               press: () {},
@@ -55,7 +55,7 @@ class SideMenu extends StatelessWidget {
               title: "Settings",
               svgSrc: "assets/icons/menu_setting.svg",
               press: () {},
-            ),
+            ),*/
           ],
         ),
       ),

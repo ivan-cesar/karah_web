@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../auth_service.dart';
 import '../../../constants.dart';
 
 class Header extends StatelessWidget {
@@ -22,7 +23,7 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Text(
-            "Dashboard",
+            "Tableau de bord",
             style: Theme.of(context).textTheme.headline6,
           ),
         if (!Responsive.isMobile(context))
@@ -54,17 +55,24 @@ class ProfileCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset(
+          /*Image.asset(
             "assets/images/profile_pic.png",
             height: 38,
-          ),
-          if (!Responsive.isMobile(context))
-            Padding(
+          ),*/
+            IconButton(
+              icon: Icon(
+                Icons.exit_to_app,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                AuthService().signOut();
+              },
+            ),
+           /* Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
               child: Text("Angelina Joli"),
-            ),
-          Icon(Icons.keyboard_arrow_down),
+            ),*/
         ],
       ),
     );
@@ -80,7 +88,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: "Search",
+        hintText: "Recherche",
         fillColor: secondaryColor,
         filled: true,
         border: OutlineInputBorder(

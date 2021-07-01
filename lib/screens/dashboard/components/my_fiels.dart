@@ -3,6 +3,7 @@ import 'package:admin/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../ajoutCommande.dart';
 import 'file_info_card.dart';
 
 class MyFiels extends StatelessWidget {
@@ -19,10 +20,10 @@ class MyFiels extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "My Files",
+              "Commandes recentes",
               style: Theme.of(context).textTheme.subtitle1,
             ),
-            ElevatedButton.icon(
+           /* ElevatedButton.icon(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(
                   horizontal: defaultPadding * 1.5,
@@ -30,10 +31,18 @@ class MyFiels extends StatelessWidget {
                       defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return AjoutCommande(
+                      //commande: mesCommande[index],btnModifier: 1,
+                    );
+                  },
+                ));
+              },
               icon: Icon(Icons.add),
-              label: Text("Add New"),
-            ),
+              label: Text("Ajouter commande"),
+            ),*/
           ],
         ),
         SizedBox(height: defaultPadding),
